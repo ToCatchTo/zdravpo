@@ -110,7 +110,7 @@ export default function Header() {
 				</Box>
 				{/* První část odkazů */}
 				<Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-					<Box component="img" src='top_header_img_mobile.png' alt='Obrázek výdeje léků' sx={{ width: '100%', height: 'calc(100vh - 399px)', objectFit: 'cover' }} />
+					<Box component="img" src='top_header_img_mobile.png' alt='Obrázek výdeje léků' sx={{ width: '100%', height: 'calc(100dvh - 399px)', objectFit: 'cover' }} />
 					<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px', zIndex: 2 }}>
 						<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px' }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>ePoukaz online</Typography>
