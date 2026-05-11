@@ -1,0 +1,7 @@
+<svg id="icon-menu-open" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <g id="Ellipse_1" data-name="Ellipse 1" fill="#0eac60" stroke="#fff" stroke-width="3" opacity="0.8">
+    <circle cx="40" cy="40" r="40" stroke="none"/>
+    <circle cx="40" cy="40" r="38.5" fill="none"/>
+  </g>
+  <text id="MENU" transform="translate(40 46)" fill="#fff" font-size="17" font-family="Onest" font-weight="700" text-decoration="underline"><tspan x="-25" y="0">MENU</tspan></text>
+</svg>

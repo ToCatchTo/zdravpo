@@ -1,0 +1,18 @@
+<svg id="icon-menu-open" xmlns="http://www.w3.org/2000/svg" width="119" height="119" viewBox="0 0 119 119">
+  <g id="Ellipse_1" fill="#0eac60" stroke="#fff" stroke-width="3">
+    <circle cx="59.5" cy="59.5" r="58" />
+  </g>
+  <text 
+    id="OTEVŘÍT_MENU" 
+    data-name="OTEVŘÍTMENU" 
+    transform="translate(58 53)" 
+    fill="#fff" 
+    font-size="22" 
+    font-family="'Onest', sans-serif" 
+    font-weight="700" 
+    text-decoration="underline"
+  >
+    <tspan x="-40" y="0">ZRUŠIT</tspan>
+    <tspan x="-30" y="28">MENU</tspan>
+  </text>
+</svg>
