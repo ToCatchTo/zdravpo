@@ -7,7 +7,7 @@ export default function Home() {
 
     return (
         <>
-            <Header />
+            <Header isHidden={false} />
             <Benefits />
             <About />
             <Footer />

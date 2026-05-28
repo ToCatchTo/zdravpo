@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
-import PayMethods from './pages/PayMethods';
+import PaymentMethods from './pages/paymentMethods';
 
 export default function App() {
 
@@ -9,7 +9,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/payMethods" element={<PayMethods />} />
+          <Route path="/paymentMethods" element={<PaymentMethods />} />
         </Routes>
       </BrowserRouter>
     </>
