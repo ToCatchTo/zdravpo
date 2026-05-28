@@ -23,9 +23,11 @@ export default function Footer() {
 								<Box sx={{ display: 'flex', alignItems: 'center', gap: '16px', mt: '15px' }}>
 									<Box component="img" src='/phone_icon.svg' alt="Ikona telefonu" sx={{ width: '25px', height: 'auto', backgroundColor: colors.secondary, borderRadius: '50%', padding: '7.5px' }} />
 									<Box>
-										<Typography sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '30px' }}>
-											+420 739 461 835<br />+420 466 511 693
-										</Typography>
+										<Box sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '30px' }}>
+											<Box component="a" href="tel:+420739461835" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>+420 739 461 835</Box>
+											<br />
+											<Box component="a" href="tel:+420466511693" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>+420 466 511 693</Box>
+										</Box>
 									</Box>
 								</Box>
 								<Box sx={{ display: 'flex', alignItems: 'center', gap: '16px', mt: { xl: '37px', sm: '15px' } }}>
@@ -57,10 +59,10 @@ export default function Footer() {
 									</Typography>
 								</Box>
 								<Box sx={{ display: 'flex', gap: '32px', mt: '43px' }}>
-									<Box component="a" href="#" sx={{ textDecoration: 'none' }}>
+									<Box component="a" href="#" sx={{ textDecoration: 'none', '&:hover': { filter: 'brightness(0.95)' } }}>
 										<Box component="img" src='/instagram_icon.svg' sx={{ width: '35px', height: 'auto', backgroundColor: colors.secondary, borderRadius: '50%', padding: '5px' }} alt='Instagram ikona' />
 									</Box>
-									<Box component="a" href="#" sx={{ textDecoration: 'none' }}>
+									<Box component="a" href="#" sx={{ textDecoration: 'none', '&:hover': { filter: 'brightness(0.95)' } }}>
 										<Box component="img" src='/facebook_icon.svg' sx={{ width: '45px', height: '45px' }} alt="Facebook ikona" />
 									</Box>
 								</Box>
@@ -91,7 +93,13 @@ export default function Footer() {
 							{/* Sekce s obrázky */}
 							<Box sx={{ mt: { xl: '-94px', sm: '0px' }, display: 'flex', flexDirection: 'column', gap: '30px', width: '100%', maxWidth: '260px', flexShrink: { xxl: 0, sm: 1 } }}>
 								<Box component="img" src='/shop_img.png' sx={{ width: '100%', height: 'auto', borderRadius: '28px' }} alt="Obrázek prodejny" />
-								<Box component="img" src='/shop_location_img.png' sx={{ width: '100%', height: 'auto', borderRadius: '28px' }} alt="Obrázek lokace z map" />
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.8014213381243!2d15.769805190460307!3d50.03537402360793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc9509cc39bb%3A0xb9ffedbe24d8f6e!2sZDRAVPO%20Pardubice%20s.r.o.!5e0!3m2!1scs!2scz!4v1779884861082!5m2!1scs!2scz"
+									style={{ border: 'none', width: '100%', borderRadius: '28px', display: 'block', minHeight: '237px' }}
+									allowFullScreen
+									loading="lazy"
+									referrerPolicy="no-referrer-when-downgrade"
+								></iframe>
 							</Box>
 						</Box>
 					</Box>
@@ -104,9 +112,11 @@ export default function Footer() {
 							<Box sx={{ display: 'flex', alignItems: 'center', gap: '16px', mt: '15px' }}>
 								<Box component="img" src='/phone_icon.svg' alt="Ikona telefonu" sx={{ width: '25px', height: 'auto', backgroundColor: colors.secondary, borderRadius: '50%', padding: '7.5px' }} />
 								<Box>
-									<Typography sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '30px' }}>
-										+420 739 461 835<br />+420 466 511 693
-									</Typography>
+									<Box sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '30px' }}>
+										<Box component="a" href="tel:+420739461835" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>+420 739 461 835</Box>
+										<br />
+										<Box component="a" href="tel:+420466511693" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>+420 466 511 693</Box>
+									</Box>
 								</Box>
 							</Box>
 							<Box sx={{ display: 'flex', alignItems: 'center', gap: '16px', mt: '37px' }}>
@@ -138,10 +148,10 @@ export default function Footer() {
 								</Typography>
 							</Box>
 							<Box sx={{ display: 'flex', gap: '32px', mt: '43px' }}>
-								<Box component="a" href="#" sx={{ textDecoration: 'none' }}>
+								<Box component="a" href="#" sx={{ textDecoration: 'none', '&:hover': { filter: 'brightness(0.95)' } }}>
 									<Box component="img" src='/instagram_icon.svg' sx={{ width: '35px', height: 'auto', backgroundColor: colors.secondary, borderRadius: '50%', padding: '5px' }} alt='Instagram ikona' />
 								</Box>
-								<Box component="a" href="#" sx={{ textDecoration: 'none' }}>
+								<Box component="a" href="#" sx={{ textDecoration: 'none', '&:hover': { filter: 'brightness(0.95)' } }}>
 									<Box component="img" src='/facebook_icon.svg' sx={{ width: '45px', height: '45px' }} alt="Facebook ikona" />
 								</Box>
 							</Box>
@@ -170,7 +180,13 @@ export default function Footer() {
 						{/* Sekce s obrázky */}
 						<Box sx={{ mt: { xl: '-94px', sm: '0px' }, display: 'flex', flexDirection: 'column', gap: '30px', width: '100%', maxWidth: '260px', flexShrink: { xxl: 0, sm: 1 }, pl: '10px' }}>
 							<Box component="img" src='/shop_img.png' sx={{ width: '100%', height: 'auto', borderRadius: '28px' }} alt="Obrázek prodejny" />
-							<Box component="img" src='/shop_location_img.png' sx={{ width: '100%', height: 'auto', borderRadius: '28px' }} alt="Obrázek lokace z map" />
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.8014213381243!2d15.769805190460307!3d50.03537402360793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc9509cc39bb%3A0xb9ffedbe24d8f6e!2sZDRAVPO%20Pardubice%20s.r.o.!5e0!3m2!1scs!2scz!4v1779884861082!5m2!1scs!2scz"
+								style={{ border: 'none', width: '100%', borderRadius: '28px', display: 'block', minHeight: '237px' }}
+								allowFullScreen
+								loading="lazy"
+								referrerPolicy="no-referrer-when-downgrade"
+							></iframe>
 						</Box>
 					</Box>
 				</Grid>
@@ -191,9 +207,11 @@ export default function Footer() {
 							<Box sx={{ display: 'flex', alignItems: 'center', gap: '15px', flexDirection: 'column' }}>
 								<Box component="img" src='/phone_icon.svg' alt="Ikona telefonu" sx={{ width: '25px', height: 'auto', backgroundColor: colors.secondary, borderRadius: '50%', padding: '7.5px' }} />
 								<Box>
-									<Typography sx={{ fontSize: '26px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '40px' }}>
-										+420 739 461 835<br />+420 466 511 693
-									</Typography>
+									<Box sx={{ fontSize: '26px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '40px' }}>
+										<Box component="a" href="tel:+420739461835" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>+420 739 461 835</Box>
+										<br />
+										<Box component="a" href="tel:+420466511693" sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>+420 466 511 693</Box>
+									</Box>
 								</Box>
 							</Box>
 							<Box sx={{ display: 'flex', alignItems: 'center', gap: '15px', flexDirection: 'column', m: '40px 36px 0px 36px' }}>
@@ -226,7 +244,14 @@ export default function Footer() {
 							17. listopadu 409<br />530 02 Pardubice
 						</Typography>
 						{/* Obrázky prodejny a lokace */}
-						<Box component="img" src='/shop_location_img.png' sx={{ borderRadius: '50px', mt: '45px', m: { sm: '45px 36px 0px 36px', xs: '45px 0px 0px 0px' } }} alt="Obrázek lokace z map" />
+						<Box
+							component="iframe"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.8014213381243!2d15.769805190460307!3d50.03537402360793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc9509cc39bb%3A0xb9ffedbe24d8f6e!2sZDRAVPO%20Pardubice%20s.r.o.!5e0!3m2!1scs!2scz!4v1779884861082!5m2!1scs!2scz"
+							sx={{ border: 'none', width: 'auto', aspectRatio: '390/356', borderRadius: '50px', m: { sm: '45px 36px 0px 36px', xs: '45px 0px 0px 0px' } }}
+							allowFullScreen
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+						></Box>
 						<Box sx={{ mt: '57px', display: 'flex', gap: '15px', overflow: 'hidden', justifyContent: 'center', width: '100%' }}>
 							<Box component="img" src='/bottom_header_img_mobile.png' sx={{ width: '205px', height: '205px', borderRadius: '50%', border: `3px solid ${colors.secondary}`, objectFit: 'cover' }} alt="Obrázek prodejny" />
 							<Box component="img" src='/shop_img.png' sx={{ width: '205px', height: '205px', borderRadius: '50%', border: `3px solid ${colors.secondary}`, objectFit: 'cover' }} alt="Obrázek prodejny" />
@@ -254,10 +279,10 @@ export default function Footer() {
 						</Typography>
 						{/* Odkazy na sociální sítě */}
 						<Box sx={{ display: 'flex', gap: '37px', mt: '41px', ml: '36px' }}>
-							<Box component="a" href="#" sx={{ textDecoration: 'none' }}>
+							<Box component="a" href="#" sx={{ textDecoration: 'none', '&:hover': { filter: 'brightness(0.95)' } }}>
 								<Box component="img" src='/instagram_icon.svg' sx={{ width: '35px', height: 'auto', backgroundColor: colors.secondary, borderRadius: '50%', padding: '5px' }} alt='Instagram ikona' />
 							</Box>
-							<Box component="a" href="#" sx={{ textDecoration: 'none' }}>
+							<Box component="a" href="#" sx={{ textDecoration: 'none', '&:hover': { filter: 'brightness(0.95)' } }}>
 								<Box component="img" src='/facebook_icon.svg' sx={{ width: '45px', height: '45px' }} alt="Facebook ikona" />
 							</Box>
 						</Box>

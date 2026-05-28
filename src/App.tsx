@@ -1,16 +1,17 @@
-import About from './components/About';
-import Benefits from './components/Benefits';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import PayMethods from './pages/PayMethods';
 
 export default function App() {
 
   return (
     <>
-      <Header />
-      <Benefits />
-      <About />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/payMethods" element={<PayMethods />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 };
