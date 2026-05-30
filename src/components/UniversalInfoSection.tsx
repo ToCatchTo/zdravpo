@@ -17,6 +17,7 @@ export default function UniversalInfoSection() {
         { name: 'Vše o inkontinenci', link: '/universalInfoSubpage' },
         { name: 'Správný výběr epitézy', link: '/universalInfoSubpage' }
     ];
+
     const imgSrc = '/top_header_img_mobile.png';
 
     return (
@@ -30,7 +31,7 @@ export default function UniversalInfoSection() {
                 {/* Seznam podstránek */}
                 <Grid size={{ lg: 3, md: 4, sm: 10, xs: 12 }} offset={{ sm: 1, xs: 0 }} sx={{ display: 'flex', flexDirection: 'column', gap: '10px', mt: { md: '80px', xs: '30px' } }}>
                     {subpages.map((subpage, index) => (
-                        <Box component="a" onClick={() => navigate(subpage.link)} key={`subpage-${index}`} sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', '&:hover': { filter: 'brightness(0.95)' } }}>
+                        <Box component="a" onClick={() => { navigate(subpage.link); window.scrollTo(0, 0) }} key={`subpage-${index}`} sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', '&:hover': { filter: 'brightness(0.95)' } }}>
                             <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>
                                 {subpage.name}
                             </Typography>
@@ -39,12 +40,12 @@ export default function UniversalInfoSection() {
                     ))}
                 </Grid>
                 {/* Obrázek */}
-                <Grid size={{ xl: 3, md: 4, sm: 10, xs: 12 }} offset={{ lg: 2, sm: 1, xs: 0 }} sx={{ borderRadius: '76px', overflow: 'hidden', display: 'flex', alignItems: 'flex-start', height: 'fit-content', alignSelf: 'center', mt: { md: '0px', xs: '60px' } }}>
+                <Grid size={{ xl: 3, md: 4, sm: 10, xs: 12 }} offset={{ lg: 2, sm: 1, xs: 0 }} sx={{ borderRadius: '76px', overflow: 'hidden', display: imgSrc ? 'flex' : 'none', alignItems: 'flex-start', height: 'fit-content', alignSelf: 'center', mt: { md: '0px', xs: '60px' } }}>
                     <Box component="img" src={imgSrc} alt='Obrázek informační sekce' sx={{ width: '100%', objectFit: 'cover', aspectRatio: '1 / 1' }} />
                 </Grid>
                 {/* Služba ePoukaz online - desktop viditelná */}
-                <Grid size={{ md: 4, sm: 10, xs: 12 }} offset={{ sm: 1, xs: 0 }} sx={{ display: { md: 'flex', xs: 'none' }, flexDirection: 'column' }}>
-                    <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '41px', xs: '33px' }, maxWidth: '405px', mt: '70px' }}>
+                <Grid size={{ md: 4, sm: 10, xs: 12 }} offset={{ lg: imgSrc ? 1 : 2, sm: imgSrc ? 1 : 1, xs: 0 }} sx={{ display: { md: 'flex', xs: 'none' }, flexDirection: 'column' }}>
+                    <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '41px', xs: '33px' }, maxWidth: '405px', mt: imgSrc ? '70px' : '0px' }}>
                         Využijte ePoukaz online, snadno rychle a z domova
                     </Typography>
                     {/* Tlačítko */}
@@ -59,7 +60,7 @@ export default function UniversalInfoSection() {
                     </Typography>
                 </Grid>
                 {/* Adresa */}
-                <Grid size={{ lg: 3, md: 9, sm: 10, xs: 12 }} offset={{ lg: 2, sm: 1, xs: 0 }} sx={{ mt: { md: '0px', xs: '76px' } }}>
+                <Grid size={{ lg: 3, md: imgSrc ? 9 : 4, sm: 10, xs: 12 }} offset={{ lg: imgSrc ? 2 : 1, sm: 1, xs: 0 }} sx={{ mt: { md: '0px', xs: '76px' } }}>
                     <Box>
                         <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '700', lineHeight: { lg: '41px', xs: '33px' } }}>
                             Navštivte nás

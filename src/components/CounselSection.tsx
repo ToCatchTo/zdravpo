@@ -36,7 +36,7 @@ export default function CounselSection() {
                         ))}
                     </Box>
                     <Grid size={{ lg: 8, sm: 12 }}>
-                        <Typography sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px', mt: { md: '38px', xs: '42px' } }}>
+                        <Typography sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px', mt: { md: '88px', xs: '42px' } }}>
                             Víme, že výběr zdravotnických pomůcek nebo vhodné zdravotní obuvi není vždy jednoduchý – zvlášť když řešíte novou nebo citlivou životní situaci. Proto jsme na našem webu připravili poradnu, která Vám pomůže lépe se zorientovat a udělat správné rozhodnutí v klidu a s jistotou.<br /><br /> Ve <span style={{ fontWeight: '700' }}>ZDRAVPO Pardubice s.r.o.</span> jsme tu pro Vás s respektem, trpělivostí a odbornými zkušenostmi. Rádi Vám pomůžeme vybrat vhodné řešení, vše srozumitelně vysvětlíme a společně najdeme cestu, která bude pro Vás nebo Vaše blízké skutečně přínosná.
                         </Typography>
                     </Grid>

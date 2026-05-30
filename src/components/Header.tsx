@@ -111,15 +111,15 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				<Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
 					<Box component="img" src='top_header_img_mobile.png' alt='Obrázek výdeje léků' sx={{ width: '100%', height: 'calc(100dvh - 399px)', objectFit: 'cover' }} />
 					<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px', zIndex: 2 }}>
-						<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+						<Box component="a" onClick={() => navigate('#')} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>ePoukaz online</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
-						<Box component="a" onClick={() => navigate('/universalInfoPage')} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+						<Box component="a" onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Zdravotnické<br />potřeby</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
-						<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+						<Box component="a" onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Obuv</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
@@ -128,15 +128,15 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				</Box>
 				{/* Druhá část odkazů */}
 				<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pb: '69px', mt: '-1px' }}>
-					<Box component="a" onClick={() => navigate('/counseling')} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('/counseling'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Poradna</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
-					<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Pro subjekty</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
-					<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('#'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Kontakt</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
@@ -149,7 +149,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 					<Box component="img" src='/logo_short.png' sx={{ width: '200px', height: 'auto', mt: '80px' }} alt='Logo ZDRAVPO' />
 					<Box sx={{ backgroundColor: colors.primary, width: '280px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px' }}>
 						{mobileMenuItems.map((item, i) => (
-							<Box component="a" onClick={() => navigate(item.link)} key={`navlinkMobile-${i}`} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', cursor: 'pointer', borderBottom: i === mobileMenuItems.length - 1 ? 'none' : `1px solid ${colors.secondary}`, borderTop: i === 0 ? `1px solid ${colors.secondary}` : 'none', height: '65px', width: '100%', mb: i === mobileMenuItems.length - 1 ? '60px' : '0px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+							<Box component="a" onClick={() => { navigate(item.link); window.scrollTo(0, 0) }} key={`navlinkMobile-${i}`} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', cursor: 'pointer', borderBottom: i === mobileMenuItems.length - 1 ? 'none' : `1px solid ${colors.secondary}`, borderTop: i === 0 ? `1px solid ${colors.secondary}` : 'none', height: '65px', width: '100%', mb: i === mobileMenuItems.length - 1 ? '60px' : '0px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 								<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '25px' }} />
 							</Box>
 						))}
@@ -161,7 +161,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				</Box>
 			</Box>
 			{/* Logo - skrytá verze */}
-			<Grid container columns={14} size={14} sx={{ mt: { sm: '116px', xs: '80px' }, justifyContent: { sm: 'flex-start', xs: 'center' } }}>
+			<Grid container columns={14} size={14} sx={{ mt: { sm: '116px', xs: '80px' }, justifyContent: { sm: 'flex-start', xs: 'center' }, display: isHidden ? 'flex' : 'none' }}>
 				<Grid offset={{ sm: 3, xs: 0 }} onClick={() => navigate('/')} component="img" src='logo_green.svg' alt='Obrázek loga' sx={{ width: '100%', height: 'auto', maxWidth: { md: '400px', sm: '250px', xs: '45%' }, display: isHidden ? 'unset' : 'none', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' } }} />
 			</Grid>
 			{/* Fixní tlačítko pro navigaci - skrytá verze */}
