@@ -11,11 +11,11 @@ export default function UniversalInfoSection() {
         text: '<span style="font-weight: 700;">ZDRAVPO Pardubice s.r.o.</span> je od roku 2025 nově pod vedením nové majitelky specializovaná prodejna zdravotnických potřeb a zdravotní obuvi v Pardubicích. Jsme tu pro všechny, kteří hledají odborné poradenství, kvalitní produkty a lidský přístup – bez ohledu na věk či aktuální zdravotní situaci. Nabízíme volný prodej i výdej pomůcek na poukaz.<br /><br /> Pomáháme lidem v náročných životních obdobích i těm, kteří chtějí svému zdraví předcházet s respektem a péčí. Naší hlavní působností je město Pardubice a celý Pardubický kraj.'
     };
     const subpages = [
-        { name: 'Inkontinence', link: '#' },
-        { name: 'Kompresní sortiment', link: '#' },
-        { name: 'Kompenzační pomůcky', link: '#' },
-        { name: 'Vše o inkontinenci', link: '#' },
-        { name: 'Správný výběr epitézy', link: '#' }
+        { name: 'Inkontinence', link: '/universalInfoSubpage' },
+        { name: 'Kompresní sortiment', link: '/universalInfoSubpage' },
+        { name: 'Kompenzační pomůcky', link: '/universalInfoSubpage' },
+        { name: 'Vše o inkontinenci', link: '/universalInfoSubpage' },
+        { name: 'Správný výběr epitézy', link: '/universalInfoSubpage' }
     ];
     const imgSrc = '/top_header_img_mobile.png';
 

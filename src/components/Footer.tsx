@@ -1,7 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../utils/globalVariables";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+	const navigate = useNavigate();
 
 	return (
 		<Grid component="footer" container columns={14} spacing={2} sx={{ position: 'relative', gap: '0px', mt: { xl: '132px', xs: '125px' } }}>
@@ -9,8 +11,8 @@ export default function Footer() {
 			<Grid columns={12} size={12} offset={1} spacing={2} container sx={{ backgroundColor: colors.primary, position: 'relative', height: 'fit-content', borderRadius: '60px 60px 0px 0px', zIndex: 1001, justifyContent: 'center', display: { md: 'flex', xs: 'none' } }}>
 				<Grid size={{ xxl: 10, xl: 11 }} offset={{ xxl: 1, xl: 0 }} spacing={2} sx={{ pt: '70px', display: 'flex', flexDirection: 'column', pb: { xl: '88px', sm: '38px', maxWidth: '1366px' } }}>
 					{/* Logo */}
-					<Box component="a" href="#header">
-						<Box component="img" src='/logo.png' sx={{ width: '200px', height: 'auto' }} />
+					<Box component="a" onClick={() => { navigate('/'); window.scrollTo(0, 0) }}>
+						<Box component="img" src='/logo.png' sx={{ width: '200px', height: 'auto', cursor: 'pointer' }} />
 					</Box>
 					{/* Seznam sekcí s informacemi */}
 					<Box sx={{ display: { xxl: 'none', xs: 'flex' }, mt: '66px', flexDirection: { xl: 'row', sm: 'column' }, justifyContent: 'space-between', gap: { xl: '20px', sm: '50px' } }}>
@@ -197,8 +199,8 @@ export default function Footer() {
 			<Grid columns={{ sm: 10, xs: 14 }} size={{ sm: 10, xs: 14 }} offset={{ sm: 2, xs: 0 }} spacing={2} container sx={{ backgroundColor: colors.primary, position: { xl: 'absolute', sm: 'relative' }, height: 'fit-content', bottom: { xl: '50px', sm: '0px' }, borderRadius: '60px 60px 0px 0px', zIndex: 1001, justifyContent: { xxl: 'unset', xs: 'center' }, display: { md: 'none', xs: 'flex' } }}>
 				<Box sx={{ pt: '70px', display: 'flex', flexDirection: 'column', pb: { xl: '88px', xs: '38px' }, alignItems: 'center', width: '100%' }}>
 					{/* Logo */}
-					<Box component="a" href="#header">
-						<Box component="img" src='/logo.png' sx={{ width: '200px', height: 'auto', mt: '35px' }} />
+					<Box component="a" onClick={() => { navigate('/'); window.scrollTo(0, 0) }}>
+						<Box component="img" src='/logo.png' sx={{ width: '200px', height: 'auto', mt: '35px', cursor: 'pointer' }} />
 					</Box>
 					{/* Seznam sekcí s informacemi */}
 					<Box sx={{ display: 'flex', mt: { sm: '66px', xs: '48px' }, flexDirection: 'column', width: '100%' }}>

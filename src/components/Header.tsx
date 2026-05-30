@@ -9,12 +9,12 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 	const mobileMenuItems = [
 		{ name: 'ePoukaz online', link: '#' },
 		{ name: 'Zdravotnické<br /> potřeby', link: '/universalInfoPage' },
-		{ name: 'Obuv', link: '#' },
-		{ name: 'Poradna', link: '#' },
-		{ name: 'Pro subjekty', link: '#' },
-		{ name: 'Doplňkový sortiment', link: '#' },
-		{ name: 'Rozvoz', link: '#' },
-		{ name: 'Dárkové poukazy', link: '#' },
+		{ name: 'Obuv', link: '/universalInfoPage' },
+		{ name: 'Poradna', link: '/counseling' },
+		{ name: 'Pro subjekty', link: '/universalInfoPage' },
+		{ name: 'Doplňkový sortiment', link: '/universalInfoPage' },
+		{ name: 'Rozvoz', link: '/universalInfoPage' },
+		{ name: 'Dárkové poukazy', link: '/universalInfoPage' },
 		{ name: 'Platební metody', link: '/paymentMethods' },
 		{ name: 'Kontakt', link: '#' }
 	];
@@ -22,16 +22,16 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 	const menuItems = [
 		{ name: 'ePoukaz online', link: '#' },
 		{ name: 'Zdravotnické<br /> potřeby', link: '/universalInfoPage' },
-		{ name: 'Obuv', link: '#' },
-		{ name: 'Poradna', link: '#' },
-		{ name: 'Pro subjekty', link: '#' },
+		{ name: 'Obuv', link: '/universalInfoPage' },
+		{ name: 'Poradna', link: '/counseling' },
+		{ name: 'Pro subjekty', link: '/universalInfoPage' },
 		{ name: 'Kontakt', link: '#' }
 	];
 
 	const menuItemsExtended = [
-		{ name: 'Doplňkový sortiment', link: '#' },
-		{ name: 'Rozvoz', link: '#' },
-		{ name: 'Dárkové poukazy', link: '#' },
+		{ name: 'Doplňkový sortiment', link: '/universalInfoPage' },
+		{ name: 'Rozvoz', link: '/universalInfoPage' },
+		{ name: 'Dárkové poukazy', link: '/universalInfoPage' },
 		{ name: 'Platební metody', link: '/paymentMethods' }
 	];
 
@@ -128,7 +128,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				</Box>
 				{/* Druhá část odkazů */}
 				<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pb: '69px', mt: '-1px' }}>
-					<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => navigate('/counseling')} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Poradna</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
@@ -145,7 +145,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 			</Box>
 			{/* Kompletní navigace */}
 			<Box sx={{ display: { sm: 'none', xs: 'unset' } }}>
-				<Box sx={{ position: 'fixed', width: '100vw', height: '100vh', backgroundColor: colors.primary, zIndex: 999, top: 0, left: 0, display: 'flex', alignItems: 'center', flexDirection: 'column', overflow: 'auto', transform: isOpened ? 'translateY(0)' : 'translateY(-100vh)', transition: 'transform 0.5s ease' }}>
+				<Box sx={{ position: 'fixed', width: '100vw', height: '100vh', backgroundColor: colors.primary, zIndex: 1002, top: 0, left: 0, display: 'flex', alignItems: 'center', flexDirection: 'column', overflow: 'auto', transform: isOpened ? 'translateY(0)' : 'translateY(-100vh)', transition: 'transform 0.5s ease' }}>
 					<Box component="img" src='/logo_short.png' sx={{ width: '200px', height: 'auto', mt: '80px' }} alt='Logo ZDRAVPO' />
 					<Box sx={{ backgroundColor: colors.primary, width: '280px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px' }}>
 						{mobileMenuItems.map((item, i) => (
@@ -156,7 +156,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 					</Box>
 				</Box>
 				{/* Fixní tlačítko pro navigaci */}
-				<Box component="a" href="#header" onClick={handleOpenButtonClick} sx={{ zIndex: 1000, backgroundColor: colors.secondary, cursor: 'pointer', position: 'fixed', height: '80px', width: '80px', right: '36px', bottom: '56px', display: isOpened ? 'flex' : 'none', borderRadius: '50%', justifyContent: 'center', alignItems: 'center', color: colors.primary, fontFamily: 'Onest', fontWeight: '600', fontSize: '16px', opacity: 0.7, '&:hover': { filter: 'brightness(0.95)' } }}>
+				<Box component="a" href="#header" onClick={handleOpenButtonClick} sx={{ zIndex: 1003, backgroundColor: colors.secondary, cursor: 'pointer', position: 'fixed', height: '80px', width: '80px', right: '36px', bottom: '56px', display: isOpened ? 'flex' : 'none', borderRadius: '50%', justifyContent: 'center', alignItems: 'center', color: colors.primary, fontFamily: 'Onest', fontWeight: '600', fontSize: '16px', opacity: 0.7, '&:hover': { filter: 'brightness(0.95)' } }}>
 					ZAVŘÍT
 				</Box>
 			</Box>
