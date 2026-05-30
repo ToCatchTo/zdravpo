@@ -12,7 +12,7 @@ export default function UniversalInfoSubpageSection() {
         <Grid container spacing={2} columns={14} sx={{ mt: { md: '100px', xs: '50px' } }}>
             <Grid columns={12} size={{ sm: 12, xs: 14 }} offset={{ sm: 1, xs: 0 }} spacing={2} container sx={{ flexDirection: 'column', backgroundColor: colors.button, borderRadius: { lg: '300px', md: '200px', sm: '100px', xs: '86px' }, padding: { md: '94px 0px 94px 0px', sm: '94px 36px 94px 36px', xs: '56px 36px 369px 36px' }, justifyContent: { lg: 'flex-start', md: 'center', sm: 'flex-start' }, gap: '0px' }}>
                 {/* Tlačítko zpět */}
-                <Grid size={1} offset={{ md: 2, sm: 1, xs: 0 }} sx={{ backgroundColor: colors.primary, borderRadius: '24px', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' }, display: 'flex', alignItems: 'center', p: { sm: '9px', xs: '10px' }, gap: { sm: '15px', xs: '13px' }, minWidth: { sm: '122px', xs: '90px' } }} onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }}>
+                <Grid size={1} offset={{ md: 2, sm: 1, xs: 0 }} sx={{ backgroundColor: colors.primary, borderRadius: '24px', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' }, display: 'flex', alignItems: 'center', p: { sm: '9px', xs: '7px 10px' }, gap: { sm: '15px', xs: '13px' }, minWidth: { sm: '122px', xs: '90px' }, maxWidth: '122px' }} onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }}>
                     <Box component="img" src='/arrow.svg' alt="Ikona šipky" sx={{ transform: 'scaleX(-1)', width: { sm: '31px', xs: '15px' }, height: { sm: '31px', xs: '15px' } }} />
                     <Typography sx={{ color: colors.secondary, fontSize: { sm: '18px', xs: '12px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: '22px' }}>
                         Zpět
@@ -53,7 +53,7 @@ export default function UniversalInfoSubpageSection() {
                     ))}
                 </Grid>
                 {/* Tlačítko zpět */}
-                <Grid size={1} offset={{ md: 2, sm: 1, xs: 0 }} sx={{ backgroundColor: colors.primary, borderRadius: '24px', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' }, display: 'flex', alignItems: 'center', p: { sm: '9px', xs: '10px' }, gap: { sm: '15px', xs: '13px' }, minWidth: { sm: '122px', xs: '90px' }, mt: '105px' }} onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }}>
+                <Grid size={1} offset={{ md: 2, sm: 1, xs: 0 }} sx={{ backgroundColor: colors.primary, borderRadius: '24px', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' }, display: { sm: 'none', xs: 'flex' }, alignItems: 'center', p: { sm: '9px', xs: '7px 10px' }, gap: { sm: '15px', xs: '13px' }, minWidth: { sm: '122px', xs: '90px' }, mt: '105px' }} onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }}>
                     <Box component="img" src='/arrow.svg' alt="Ikona šipky" sx={{ transform: 'scaleX(-1)', width: { sm: '31px', xs: '15px' }, height: { sm: '31px', xs: '15px' } }} />
                     <Typography sx={{ color: colors.secondary, fontSize: { sm: '18px', xs: '12px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: '22px' }}>
                         Zpět
