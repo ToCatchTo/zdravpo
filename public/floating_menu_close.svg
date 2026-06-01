@@ -12,7 +12,7 @@
     font-weight="700" 
     text-decoration="underline"
   >
-    <tspan x="-40" y="0">ZRUŠIT</tspan>
+    <tspan x="-40" y="0">ZAVŘÍT</tspan>
     <tspan x="-30" y="28">MENU</tspan>
   </text>
 </svg>

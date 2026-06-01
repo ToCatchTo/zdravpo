@@ -31,10 +31,10 @@ export default function UniversalInfoSubpageSection() {
                     </Typography>
                 </Grid>
                 {/* Obrázky 1 */}
-                <Grid size={{ md: 8, sm: 10 }} offset={{ md: 2, sm: 1 }} sx={{ mt: { sm: '40px', xs: '45px' }, columnGap: '42px', rowGap: '30px', display: { sm: 'flex', xs: 'none' }, flexWrap: 'wrap', justifyContent: { md: 'flex-start', xs: 'center' } }}>
-                    <Box component="img" src={soloPicture} alt="Obrázek solo" sx={{ width: '100%', height: 'auto', maxWidth: { md: '335px', xs: '318px' }, borderRadius: '76px', flex: '1' }} />
+                <Grid size={{ md: 8, sm: 10 }} offset={{ md: 2, sm: 1 }} sx={{ mt: { sm: '40px', xs: '45px' }, columnGap: { lg: '42px', xs: '30px' }, rowGap: '30px', display: { sm: 'flex', xs: 'none' }, justifyContent: { md: 'flex-start', xs: 'center' }, flexWrap: { md: 'nowrap', xs: 'wrap' } }}>
+                    <Box component="img" src={soloPicture} alt="Obrázek solo" sx={{ width: '100%', height: 'auto', maxWidth: { md: '335px', xs: '318px' }, borderRadius: { xl: '76px', xs: '20%' }, flex: '1', minWidth: { md: '0px', xs: 'unset' } }} />
                     {otherPictures.map((picture, index) => (
-                        <Box component="img" src={picture} alt={`Obrázek ${index + 1}`} key={`subpagePicture-${index}`} sx={{ width: '100%', height: 'auto', maxWidth: { md: '335px', xs: '318px' }, borderRadius: '76px', flex: '1' }} />
+                        <Box component="img" src={picture} alt={`Obrázek ${index + 1}`} key={`subpagePicture-${index}`} sx={{ width: '100%', height: 'auto', maxWidth: { md: '335px', xs: '318px' }, borderRadius: { xl: '76px', xs: '20%' }, flex: '1', minWidth: { md: '0px', xs: 'unset' } }} />
                     ))}
                 </Grid>
                 <Grid size={{ md: 8, sm: 10 }} offset={{ md: 2, sm: 1 }} sx={{ mt: '40px', columnGap: '42px', rowGap: '30px', display: { sm: 'none', xs: 'flex' }, flexWrap: 'wrap', justifyContent: { md: 'flex-start', xs: 'center' } }}>

@@ -48,7 +48,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 					<Grid size={{ md: 3, sm: 4 }} spacing={2} offset={{ xl: 3, sm: 2 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
 						<Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: { md: '40px', sm: '10px' }, '@media (min-width: 1536px)': { gap: '65px' }, '@media (min-width: 1700px)': { gap: '100px' } }}>
 							{/* Logo */}
-							<Box component="img" src='/logo.png' sx={{ width: '100%', height: 'auto' }} alt='Logo ZDRAVPO' />
+							<Box component="img" src='/logo_white.svg' sx={{ width: '100%', height: 'auto' }} alt='Logo ZDRAVPO' />
 							{/* Základní navigace */}
 							<Box sx={{ width: '100%' }}>
 								{menuItems.map((item, i) => (
@@ -86,7 +86,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				<Grid size={13} spacing={2} container columns={13} sx={{ backgroundColor: colors.primary, color: colors.text, height: '100vh', borderRadius: { lg: '0px 0px 300px 0px', md: '0px 0px 200px 0px', sm: '0px 0px 100px 0px' }, ml: '-16px', zIndex: 998, position: 'absolute', transform: isOpened ? 'translateX(0)' : (isHidden ? 'translateX(-100vw)' : 'translateX(-50vw)'), transition: 'transform 0.5s ease' }}>
 					<Grid size={{ md: 3, sm: 4 }} offset={7} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
 						<Box sx={{ display: 'flex', flexDirection: 'column', gap: { md: '40px', sm: '10px' }, '@media (min-width: 1536px)': { gap: '65px' }, '@media (min-width: 1700px)': { gap: '100px' } }}>
-							<Box component="img" src='/logo.png' sx={{ width: '100%', height: 'auto', opacity: '0' }} alt='Logo ZDRAVPO' />
+							<Box component="img" src='/logo_white.svg' sx={{ width: '100%', height: 'auto', opacity: '0' }} alt='Logo ZDRAVPO' />
 							<Box sx={{ pb: { lg: '144px', md: '124px', sm: '84px' }, '@media (min-width: 1536px)': { pb: '164px' }, '@media (min-width: 1700px)': { pb: '184px' } }}>
 								{menuItemsExtended.map((item, i) => (
 									<Box component="a" onClick={() => navigate(item.link)} key={`navlinkExtended-${i}`} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItemsExtended.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
@@ -146,11 +146,11 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 			{/* Kompletní navigace */}
 			<Box sx={{ display: { sm: 'none', xs: 'unset' } }}>
 				<Box sx={{ position: 'fixed', width: '100vw', height: '100vh', backgroundColor: colors.primary, zIndex: 1002, top: 0, left: 0, display: 'flex', alignItems: 'center', flexDirection: 'column', overflow: 'auto', transform: isOpened ? 'translateY(0)' : 'translateY(-100vh)', transition: 'transform 0.5s ease' }}>
-					<Box component="img" src='/logo_short.png' sx={{ width: '200px', height: 'auto', mt: '80px' }} alt='Logo ZDRAVPO' />
+					<Box component="img" src='/logo_short.svg' sx={{ width: '200px', height: 'auto', mt: '80px' }} alt='Logo ZDRAVPO' />
 					<Box sx={{ backgroundColor: colors.primary, width: '280px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px' }}>
 						{mobileMenuItems.map((item, i) => (
 							<Box component="a" onClick={() => { navigate(item.link); window.scrollTo(0, 0) }} key={`navlinkMobile-${i}`} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', cursor: 'pointer', borderBottom: i === mobileMenuItems.length - 1 ? 'none' : `1px solid ${colors.secondary}`, borderTop: i === 0 ? `1px solid ${colors.secondary}` : 'none', height: '65px', width: '100%', mb: i === mobileMenuItems.length - 1 ? '60px' : '0px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
-								<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '300', lineHeight: '25px' }} />
+								<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '500', lineHeight: '25px' }} />
 							</Box>
 						))}
 					</Box>

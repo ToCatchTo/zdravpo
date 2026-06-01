@@ -1,0 +1,19 @@
+<svg id="logo-zdravpo-pardubice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="318" height="39.646" viewBox="0 0 318 39.646">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="318" height="39.646" fill="none"/>
+    </clipPath>
+  </defs>
+  <path id="Path_25" data-name="Path 25" d="M12.174.7V12.876H0v9.917H12.178V34.966H22.1l-.019-12.173H34.26V12.875H22.076L22.09.7Z" transform="translate(0 0.011)" fill="#ffffff"/>
+  <path id="Path_26" data-name="Path 26" d="M45.184.7V8.556H73.473L44.644,20.831V34.97H78.429V27.115H49.75L78.384,14.939V.7Z" transform="translate(0.686 0.011)" fill="#ffffff"/>
+  <g id="Group_6" data-name="Group 6" transform="translate(0)">
+    <g id="Group_5" data-name="Group 5" clip-path="url(#clip-path)">
+      <path id="Path_27" data-name="Path 27" d="M103.049.725H85.394v34.27h17.655c10.605,0,17.577-6.824,17.577-17.086,0-10.656-6.675-17.184-17.577-17.184m0,26.512H93.888V8.434H103c5.745,0,9.083,3.387,9.083,9.279,0,5.793-3.486,9.524-9.037,9.524" transform="translate(1.312 0.011)" fill="#ffffff"/>
+      <path id="Path_28" data-name="Path 28" d="M175.358.725,163.81,34.995h8.935l2.5-8h15.289l2.5,8h8.985L190.48.725Zm2.248,18.9,5.312-14.533,5.311,14.533Z" transform="translate(2.517 0.011)" fill="#ffffff"/>
+      <path id="Path_29" data-name="Path 29" d="M217.9,30.526,207.424.724h-8.985l12,34.27h14.926L237.314.724h-8.987Z" transform="translate(3.049 0.011)" fill="#ffffff"/>
+      <path id="Path_30" data-name="Path 30" d="M260.873.725H240.312v34.27H248.8V25.617h12.118c7.412,0,12.175-5.5,12.175-12.518,0-6.874-4.366-12.372-12.226-12.372M259.847,17.86H248.8V8.482h11.284a4.294,4.294,0,0,1,4.426,4.156c0,.138,0,.276-.007.413,0,2.843-1.473,4.812-4.665,4.812" transform="translate(3.692 0.011)" fill="#ffffff"/>
+      <path id="Path_31" data-name="Path 31" d="M295.241,0c-10.6,0-18.608,7.659-18.608,17.626,0,10.261,8,18.116,18.608,18.116,10.507,0,18.509-7.806,18.509-18.116,0-9.967-8-17.626-18.509-17.626m0,27.936c-6.873,0-10.064-5.057-10.064-10.31,0-4.713,3.191-9.819,10.064-9.819a9.528,9.528,0,0,1,9.962,9.072q.017.373.005.746c0,5.253-3.191,10.31-9.967,10.31" transform="translate(4.25 0)" fill="#ffffff"/>
+      <path id="Path_32" data-name="Path 32" d="M158.405,12.82C158.405,5.945,154.039.7,146.179.7H125.618v34.27h8.494V24.846H139l11.392,10.124h11.381l-11.9-10.578c5.292-1.373,8.536-5.788,8.536-11.575M134.112,8.451h11.283a4.093,4.093,0,0,1,4.419,4.312c0,2.843-1.473,4.319-4.665,4.319H134.112Z" transform="translate(1.93 0.011)" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

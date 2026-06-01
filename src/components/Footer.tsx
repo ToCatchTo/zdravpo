@@ -12,7 +12,7 @@ export default function Footer() {
 				<Grid size={{ xxl: 10, xl: 11 }} offset={{ xxl: 1, xl: 0 }} spacing={2} sx={{ pt: '70px', display: 'flex', flexDirection: 'column', pb: { xl: '88px', sm: '38px', maxWidth: '1366px' } }}>
 					{/* Logo */}
 					<Box component="a" onClick={() => { navigate('/'); window.scrollTo(0, 0) }}>
-						<Box component="img" src='/logo.png' sx={{ width: '200px', height: 'auto', cursor: 'pointer' }} />
+						<Box component="img" src='/logo_white.svg' alt='Logo ZDRAVPO' sx={{ width: '200px', height: 'auto', cursor: 'pointer' }} />
 					</Box>
 					{/* Seznam sekcí s informacemi */}
 					<Box sx={{ display: { xxl: 'none', xs: 'flex' }, mt: '66px', flexDirection: { xl: 'row', sm: 'column' }, justifyContent: 'space-between', gap: { xl: '20px', sm: '50px' } }}>
@@ -99,7 +99,7 @@ export default function Footer() {
 									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.8014213381243!2d15.769805190460307!3d50.03537402360793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc9509cc39bb%3A0xb9ffedbe24d8f6e!2sZDRAVPO%20Pardubice%20s.r.o.!5e0!3m2!1scs!2scz!4v1779884861082!5m2!1scs!2scz"
 									style={{ border: 'none', width: '100%', borderRadius: '28px', display: 'block', minHeight: '237px' }}
 									allowFullScreen
-									loading="lazy"
+									loading="eager"
 									referrerPolicy="no-referrer-when-downgrade"
 								></iframe>
 							</Box>
@@ -186,7 +186,7 @@ export default function Footer() {
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.8014213381243!2d15.769805190460307!3d50.03537402360793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc9509cc39bb%3A0xb9ffedbe24d8f6e!2sZDRAVPO%20Pardubice%20s.r.o.!5e0!3m2!1scs!2scz!4v1779884861082!5m2!1scs!2scz"
 								style={{ border: 'none', width: '100%', borderRadius: '28px', display: 'block', minHeight: '237px' }}
 								allowFullScreen
-								loading="lazy"
+								loading="eager"
 								referrerPolicy="no-referrer-when-downgrade"
 							></iframe>
 						</Box>
@@ -200,7 +200,7 @@ export default function Footer() {
 				<Box sx={{ pt: '70px', display: 'flex', flexDirection: 'column', pb: { xl: '88px', xs: '38px' }, alignItems: 'center', width: '100%' }}>
 					{/* Logo */}
 					<Box component="a" onClick={() => { navigate('/'); window.scrollTo(0, 0) }}>
-						<Box component="img" src='/logo.png' sx={{ width: '200px', height: 'auto', mt: '35px', cursor: 'pointer' }} />
+						<Box component="img" src='/logo_white.svg' alt='Logo ZDRAVPO' sx={{ width: '200px', height: 'auto', mt: '35px', cursor: 'pointer' }} />
 					</Box>
 					{/* Seznam sekcí s informacemi */}
 					<Box sx={{ display: 'flex', mt: { sm: '66px', xs: '48px' }, flexDirection: 'column', width: '100%' }}>
@@ -251,7 +251,7 @@ export default function Footer() {
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.8014213381243!2d15.769805190460307!3d50.03537402360793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dcc9509cc39bb%3A0xb9ffedbe24d8f6e!2sZDRAVPO%20Pardubice%20s.r.o.!5e0!3m2!1scs!2scz!4v1779884861082!5m2!1scs!2scz"
 							sx={{ border: 'none', width: 'auto', aspectRatio: '390/356', borderRadius: '50px', m: { sm: '45px 36px 0px 36px', xs: '45px 0px 0px 0px' } }}
 							allowFullScreen
-							loading="lazy"
+							loading="eager"
 							referrerPolicy="no-referrer-when-downgrade"
 						></Box>
 						<Box sx={{ mt: '57px', display: 'flex', gap: '15px', overflow: 'hidden', justifyContent: 'center', width: '100%' }}>
