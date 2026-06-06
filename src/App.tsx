@@ -4,6 +4,7 @@ import PaymentMethods from './pages/paymentMethods';
 import UniversalInfoPage from './pages/universalInfoPage';
 import Counseling from './pages/counseling';
 import UniversalInfoSubpage from './pages/universalInfoSubpage';
+import Contact from './pages/contact';
 
 export default function App() {
 
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/paymentMethods" element={<PaymentMethods />} />
           <Route path="/universalInfoPage" element={<UniversalInfoPage />} />
           <Route path="/counseling" element={<Counseling />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/universalInfoSubpage" element={<UniversalInfoSubpage />} />
         </Routes>
       </BrowserRouter>

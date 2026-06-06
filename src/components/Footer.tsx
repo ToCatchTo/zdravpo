@@ -2,13 +2,13 @@ import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../utils/globalVariables";
 import { useNavigate } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer({ isHidden }: { isHidden: boolean }) {
 	const navigate = useNavigate();
 
 	return (
 		<Grid component="footer" container columns={14} spacing={2} sx={{ position: 'relative', gap: '0px', mt: { xl: '132px', xs: '125px' } }}>
 			{/* Horní zelená část */}
-			<Grid columns={12} size={12} offset={1} spacing={2} container sx={{ backgroundColor: colors.primary, position: 'relative', height: 'fit-content', borderRadius: '60px 60px 0px 0px', zIndex: 1001, justifyContent: 'center', display: { md: 'flex', xs: 'none' } }}>
+			{!isHidden && <Grid columns={12} size={12} offset={1} spacing={2} container sx={{ backgroundColor: colors.primary, position: 'relative', height: 'fit-content', borderRadius: '60px 60px 0px 0px', zIndex: 1001, justifyContent: 'center', display: { md: 'flex', xs: 'none' } }}>
 				<Grid size={{ xxl: 10, xl: 11 }} offset={{ xxl: 1, xl: 0 }} spacing={2} sx={{ pt: '70px', display: 'flex', flexDirection: 'column', pb: { xl: '88px', sm: '38px', maxWidth: '1366px' } }}>
 					{/* Logo */}
 					<Box component="a" onClick={() => { navigate('/'); window.scrollTo(0, 0) }}>
@@ -194,9 +194,9 @@ export default function Footer() {
 				</Grid>
 				{/* Horní obrázek s merchem */}
 				<Box component="img" src='/merch_img.png' alt="Obrázek s merchem" sx={{ width: '144px', height: '144px', border: '3px solid ' + colors.secondary, borderRadius: '50%', position: 'absolute', top: '-75px', left: 'calc(50% - 72px)' }} />
-			</Grid>
+			</Grid>}
 			{/* Horní zelená část na mobilu */}
-			<Grid columns={{ sm: 10, xs: 14 }} size={{ sm: 10, xs: 14 }} offset={{ sm: 2, xs: 0 }} spacing={2} container sx={{ backgroundColor: colors.primary, position: { xl: 'absolute', sm: 'relative' }, height: 'fit-content', bottom: { xl: '50px', sm: '0px' }, borderRadius: '60px 60px 0px 0px', zIndex: 1001, justifyContent: { xxl: 'unset', xs: 'center' }, display: { md: 'none', xs: 'flex' } }}>
+			{!isHidden && <Grid columns={{ sm: 10, xs: 14 }} size={{ sm: 10, xs: 14 }} offset={{ sm: 2, xs: 0 }} spacing={2} container sx={{ backgroundColor: colors.primary, position: { xl: 'absolute', sm: 'relative' }, height: 'fit-content', bottom: { xl: '50px', sm: '0px' }, borderRadius: '60px 60px 0px 0px', zIndex: 1001, justifyContent: { xxl: 'unset', xs: 'center' }, display: { md: 'none', xs: 'flex' } }}>
 				<Box sx={{ pt: '70px', display: 'flex', flexDirection: 'column', pb: { xl: '88px', xs: '38px' }, alignItems: 'center', width: '100%' }}>
 					{/* Logo */}
 					<Box component="a" onClick={() => { navigate('/'); window.scrollTo(0, 0) }}>
@@ -292,7 +292,7 @@ export default function Footer() {
 				</Box>
 				{/* Horní obrázek s merchem */}
 				<Box component="img" src='/merch_img.png' alt="Obrázek s merchem" sx={{ width: { sm: '110px', xs: '90px' }, height: { sm: '110px', xs: '90px' }, border: '3px solid ' + colors.secondary, borderRadius: '50%', position: 'absolute', top: { sm: '-55px', xs: '-45px' }, left: { sm: 'calc(50% - 55px)', xs: 'calc(50% - 45px)' } }} />
-			</Grid>
+			</Grid>}
 			{/* Dolní černá část */}
 			<Grid size={14} sx={{ position: 'relative', height: '50px', zIndex: 1001, backgroundColor: colors.black }}>
 				<Grid size={12} offset={1} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>

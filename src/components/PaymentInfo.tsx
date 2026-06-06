@@ -4,6 +4,10 @@ import { colors } from "../utils/globalVariables";
 export default function PaymentInfo() {
     const paymentsFileNames = ['payment_edenred.png', 'payment_cadhoc.png', 'payment_ticket.png', 'payment_ticket_card.png', 'payment_mastercard.png', 'payment_visa.png', 'payment_edenred.png', 'payment_cadhoc.png', 'payment_ticket.png', 'payment_ticket_card.png'];
 
+    const handlePayment = () => {
+
+    }
+
     return (
         <Grid container spacing={2} columns={14} sx={{ mt: { sm: '100px', xs: '50px' } }}>
             <Grid columns={12} size={{ sm: 12, xs: 14 }} offset={{ sm: 1, xs: 0 }} spacing={2} container sx={{ backgroundColor: colors.button, borderRadius: { lg: '300px', md: '200px', sm: '100px', xs: '86px' }, padding: { sm: '113px 0px 169px 0px', xs: '113px 0px 369px 0px' }, justifyContent: { lg: 'flex-start', xs: 'center' } }}>
@@ -17,7 +21,7 @@ export default function PaymentInfo() {
                     </Typography>
                     <Grid size={{ md: 4, xs: 12 }} offset={0} sx={{ display: { md: 'none', xs: 'flex' }, gap: '10px', flexWrap: 'wrap', mt: { sm: '80px', xs: '50px' }, alignContent: 'flex-start' }}>
                         {paymentsFileNames.map((payment, index) => (
-                            <Box key={`payment-${index}`} sx={{ width: 'calc(50% - 5px)', backgroundColor: colors.secondary, height: '40px', p: '10px 0px', borderRadius: '19px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <Box key={`payment-${index}`} onClick={handlePayment} sx={{ width: 'calc(50% - 5px)', backgroundColor: colors.secondary, height: '40px', p: '10px 0px', borderRadius: '19px', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' } }}>
                                 <Box component="img" src={`/${payment}`} alt={`Ikona platební metody ${index + 1}`} sx={{ width: 'auto', height: '100%', maxWidth: '100px' }} />
                             </Box>
                         ))}
@@ -39,7 +43,7 @@ export default function PaymentInfo() {
                 {/* Pravá část s platebními metodami */}
                 <Grid size={4} offset={1} sx={{ display: { md: 'flex', xs: 'none' }, rowGap: '10px', columnGap: '16px', flexWrap: 'wrap', mt: '80px', alignContent: 'flex-start', flexDirection: { lg: 'row', xs: 'column' } }}>
                     {paymentsFileNames.map((payment, index) => (
-                        <Box key={`payment-${index}`} sx={{ width: { lg: 'calc(50% - 8px)', xs: '100%' }, backgroundColor: colors.secondary, height: '40px', p: '10px 0px', borderRadius: '19px', display: 'flex', justifyContent: 'center', alignItems: 'center', maxwidth: '260px', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' } }}>
+                        <Box key={`payment-${index}`} onClick={handlePayment} sx={{ width: { lg: 'calc(50% - 8px)', xs: '100%' }, backgroundColor: colors.secondary, height: '40px', p: '10px 0px', borderRadius: '19px', display: 'flex', justifyContent: 'center', alignItems: 'center', maxwidth: '260px', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' } }}>
                             <Box component="img" src={`/${payment}`} alt={`Ikona platební metody ${index + 1}`} sx={{ width: 'auto', height: '100%', maxWidth: '100px' }} />
                         </Box>
                     ))}

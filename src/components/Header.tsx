@@ -16,7 +16,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 		{ name: 'Rozvoz', link: '/universalInfoPage' },
 		{ name: 'Dárkové poukazy', link: '/universalInfoPage' },
 		{ name: 'Platební metody', link: '/paymentMethods' },
-		{ name: 'Kontakt', link: '#' }
+		{ name: 'Kontakt', link: '/contact' }
 	];
 
 	const menuItems = [
@@ -25,7 +25,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 		{ name: 'Obuv', link: '/universalInfoPage' },
 		{ name: 'Poradna', link: '/counseling' },
 		{ name: 'Pro subjekty', link: '/universalInfoPage' },
-		{ name: 'Kontakt', link: '#' }
+		{ name: 'Kontakt', link: '/contact' }
 	];
 
 	const menuItemsExtended = [
@@ -136,7 +136,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Pro subjekty</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
-					<Box component="a" onClick={() => { navigate('#'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('/contact'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Kontakt</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
