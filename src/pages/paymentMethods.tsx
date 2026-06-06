@@ -14,7 +14,7 @@ export default function PaymentMethods() {
                 <Benefits />
             </Box>
             <Box sx={{ mt: { lg: '265px', md: '200px', sm: '180px', xs: '-353px' } }}>
-                <Footer />
+                <Footer isHidden={false} />
             </Box>
         </>
     )

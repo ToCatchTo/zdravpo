@@ -14,7 +14,7 @@ export default function Counseling() {
                 <Benefits />
             </Box>
             <Box sx={{ mt: { lg: '265px', md: '200px', sm: '180px', xs: '-352px' } }}>
-                <Footer />
+                <Footer isHidden={false} />
             </Box>
         </>
     )

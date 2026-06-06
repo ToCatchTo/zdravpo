@@ -10,7 +10,7 @@ export default function Home() {
             <Header isHidden={false} />
             <Benefits />
             <About />
-            <Footer />
+            <Footer isHidden={false} />
         </>
     )
 };
