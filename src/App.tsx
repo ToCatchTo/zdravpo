@@ -5,6 +5,7 @@ import UniversalInfoPage from './pages/universalInfoPage';
 import Counseling from './pages/counseling';
 import UniversalInfoSubpage from './pages/universalInfoSubpage';
 import Contact from './pages/contact';
+import CounselingDetailPage from './pages/counselingDetailPage';
 
 export default function App() {
 
@@ -13,11 +14,12 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/paymentMethods" element={<PaymentMethods />} />
-          <Route path="/universalInfoPage" element={<UniversalInfoPage />} />
-          <Route path="/counseling" element={<Counseling />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/platebni-metody" element={<PaymentMethods />} />
+          <Route path="/kategorie/:slug" element={<UniversalInfoPage />} />
+          <Route path="/poradna" element={<Counseling />} />
+          <Route path="/kontakt" element={<Contact />} />
           <Route path="/universalInfoSubpage" element={<UniversalInfoSubpage />} />
+          <Route path="/poradna/:slug" element={<CounselingDetailPage />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -8,31 +8,31 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 	const navigate = useNavigate();
 	const mobileMenuItems = [
 		{ name: 'ePoukaz online', link: '#' },
-		{ name: 'Zdravotnické<br /> potřeby', link: '/universalInfoPage' },
-		{ name: 'Obuv', link: '/universalInfoPage' },
-		{ name: 'Poradna', link: '/counseling' },
-		{ name: 'Pro subjekty', link: '/universalInfoPage' },
-		{ name: 'Doplňkový sortiment', link: '/universalInfoPage' },
-		{ name: 'Rozvoz', link: '/universalInfoPage' },
-		{ name: 'Dárkové poukazy', link: '/universalInfoPage' },
-		{ name: 'Platební metody', link: '/paymentMethods' },
-		{ name: 'Kontakt', link: '/contact' }
+		{ name: 'Zdravotnické<br /> potřeby', link: '/kategorie' },
+		{ name: 'Obuv', link: '/kategorie' },
+		{ name: 'Poradna', link: '/poradna' },
+		{ name: 'Pro subjekty', link: '/kategorie' },
+		{ name: 'Doplňkový sortiment', link: '/kategorie' },
+		{ name: 'Rozvoz', link: '/kategorie' },
+		{ name: 'Dárkové poukazy', link: '/kategorie' },
+		{ name: 'Platební metody', link: '/platebni-metody' },
+		{ name: 'Kontakt', link: '/kontakt' }
 	];
 
 	const menuItems = [
 		{ name: 'ePoukaz online', link: '#' },
-		{ name: 'Zdravotnické<br /> potřeby', link: '/universalInfoPage' },
-		{ name: 'Obuv', link: '/universalInfoPage' },
-		{ name: 'Poradna', link: '/counseling' },
-		{ name: 'Pro subjekty', link: '/universalInfoPage' },
-		{ name: 'Kontakt', link: '/contact' }
+		{ name: 'Zdravotnické<br /> potřeby', link: '/kategorie' },
+		{ name: 'Obuv', link: '/kategorie' },
+		{ name: 'Poradna', link: '/poradna' },
+		{ name: 'Pro subjekty', link: '/kategorie' },
+		{ name: 'Kontakt', link: '/kontakt' }
 	];
 
 	const menuItemsExtended = [
-		{ name: 'Doplňkový sortiment', link: '/universalInfoPage' },
-		{ name: 'Rozvoz', link: '/universalInfoPage' },
-		{ name: 'Dárkové poukazy', link: '/universalInfoPage' },
-		{ name: 'Platební metody', link: '/paymentMethods' }
+		{ name: 'Doplňkový sortiment', link: '/kategorie' },
+		{ name: 'Rozvoz', link: '/kategorie' },
+		{ name: 'Dárkové poukazy', link: '/kategorie' },
+		{ name: 'Platební metody', link: '/platebni-metody' }
 	];
 
 	const handleOpenButtonClick = () => {
@@ -102,24 +102,24 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 			{/* Mobilní header */}
 			<Box component="header" sx={{ display: { sm: 'none', xs: isHidden ? 'none' : 'flex' }, gap: '0px', flexDirection: 'column' }}>
 				{/* Logo */}
-				<Box component="img" src='logo_green.svg' alt='Logo ZDRAVPO' sx={{ width: '318px', height: 'auto', position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '85px', zIndex: 1 }} />
+				<Box component="img" src='/logo_green.svg' alt='Logo ZDRAVPO' sx={{ width: '318px', height: 'auto', position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '85px', zIndex: 1 }} />
 				{/* Fixní tlačítko pro navigaci */}
 				<Box component="a" href="#header" onClick={handleOpenButtonClick} sx={{ zIndex: 1002, backgroundColor: 'transparent', cursor: 'pointer', position: 'fixed', height: '80px', width: '80px', right: '36px', top: '24vh', display: isOpened ? 'none' : 'unset', '&:hover': { filter: 'brightness(0.95)' } }}>
-					<Box component="img" src='floating_menu_open_mobile.svg' alt='Ikona otevření navigace' sx={{ width: '100%', height: '100%' }} />
+					<Box component="img" src='/floating_menu_open_mobile.svg' alt='Ikona otevření navigace' sx={{ width: '100%', height: '100%' }} />
 				</Box>
 				{/* První část odkazů */}
 				<Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-					<Box component="img" src='top_header_img_mobile.png' alt='Obrázek výdeje léků' sx={{ width: '100%', height: 'calc(100dvh - 399px)', objectFit: 'cover' }} />
+					<Box component="img" src='/top_header_img_mobile.png' alt='Obrázek výdeje léků' sx={{ width: '100%', height: 'calc(100dvh - 399px)', objectFit: 'cover' }} />
 					<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px', zIndex: 2 }}>
 						<Box component="a" onClick={() => navigate('#')} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>ePoukaz online</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
-						<Box component="a" onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+						<Box component="a" onClick={() => { navigate('/kategorie'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Zdravotnické<br />potřeby</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
-						<Box component="a" onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+						<Box component="a" onClick={() => { navigate('/kategorie'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Obuv</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
@@ -128,15 +128,15 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				</Box>
 				{/* Druhá část odkazů */}
 				<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pb: '69px', mt: '-1px' }}>
-					<Box component="a" onClick={() => { navigate('/counseling'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('/poradna'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Poradna</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
-					<Box component="a" onClick={() => { navigate('/universalInfoPage'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('/kategorie'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Pro subjekty</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
-					<Box component="a" onClick={() => { navigate('/contact'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+					<Box component="a" onClick={() => { navigate('/kontakt'); window.scrollTo(0, 0) }} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 						<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>Kontakt</Typography>
 						<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 					</Box>
@@ -162,19 +162,19 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 			</Box>
 			{/* Logo - skrytá verze */}
 			<Grid container columns={14} size={14} sx={{ mt: { sm: '116px', xs: '80px' }, justifyContent: { sm: 'flex-start', xs: 'center' }, display: isHidden ? 'flex' : 'none' }}>
-				<Grid offset={{ sm: 3, xs: 0 }} onClick={() => navigate('/')} component="img" src='logo_green.svg' alt='Obrázek loga' sx={{ width: '100%', height: 'auto', maxWidth: { md: '400px', sm: '250px', xs: '45%' }, display: isHidden ? 'unset' : 'none', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' } }} />
+				<Grid offset={{ sm: 3, xs: 0 }} onClick={() => navigate('/')} component="img" src='/logo_green.svg' alt='Obrázek loga' sx={{ width: '100%', height: 'auto', maxWidth: { md: '400px', sm: '250px', xs: '45%' }, display: isHidden ? 'unset' : 'none', cursor: 'pointer', '&:hover': { filter: 'brightness(0.95)' } }} />
 			</Grid>
 			{/* Fixní tlačítko pro navigaci - skrytá verze */}
 			<Box component="a" href="#header" onClick={handleOpenButtonClick} sx={{ zIndex: 1000, backgroundColor: 'transparent', border: 'none', cursor: 'pointer', position: 'fixed', height: { xl: '119px', lg: '100px', md: '90px', sm: '70px' }, width: { xl: '119px', lg: '100px', md: '90px', sm: '70px' }, lg: '100px', p: '0px', right: { md: 'calc((100vw / 14) * 2 + 32px)', sm: 'calc((100vw / 14) * 2 + 16px)' }, top: { xl: '100px', lg: '109px', md: '114px', sm: '110px' }, display: isHidden ? { sm: 'unset', xs: 'none' } : 'none' }}>
 				{isOpened ?
-					<Box component="img" src='floating_menu_close.svg' alt='Ikona zavření navigace' sx={{ width: '100%', height: '100%', '&:hover': { filter: 'brightness(0.95)' } }} />
+					<Box component="img" src='/floating_menu_close.svg' alt='Ikona zavření navigace' sx={{ width: '100%', height: '100%', '&:hover': { filter: 'brightness(0.95)' } }} />
 					:
-					<Box component="img" src='floating_menu_open.svg' alt='Ikona otevření navigace' sx={{ width: '100%', height: '100%', '&:hover': { filter: 'brightness(0.95)' } }} />
+					<Box component="img" src='/floating_menu_open.svg' alt='Ikona otevření navigace' sx={{ width: '100%', height: '100%', '&:hover': { filter: 'brightness(0.95)' } }} />
 				}
 			</Box>
 			{/* Fixní tlačítko pro navigaci - skrytá verze */}
 			<Box component="a" href="#header" onClick={handleOpenButtonClick} sx={{ zIndex: 1002, backgroundColor: 'transparent', cursor: 'pointer', position: 'fixed', height: '80px', width: '80px', right: '36px', top: '204px', display: isOpened ? 'none' : (isHidden ? { sm: 'none', xs: 'unset' } : 'none'), '&:hover': { filter: 'brightness(0.95)' } }}>
-				<Box component="img" src='floating_menu_open_mobile.svg' alt='Ikona otevření navigace' sx={{ width: '100%', height: '100%' }} />
+				<Box component="img" src='/floating_menu_open_mobile.svg' alt='Ikona otevření navigace' sx={{ width: '100%', height: '100%' }} />
 			</Box>
 		</Box >
 	)
