@@ -51,8 +51,8 @@ export default function CounselSection() {
                     {/* Načítání stav */}
                     {loading && (
                         <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: '10px', mt: { md: '70px', sm: '50px', xs: '30px' } }}>
-                            {Array.from(new Array(5)).map((_) => (
-                                <Skeleton variant="rectangular" width="100%" height={60} sx={{ borderRadius: '20px' }} />
+                            {Array.from(new Array(5)).map((_, index) => (
+                                <Skeleton variant="rectangular" key={index} width="100%" height={60} sx={{ borderRadius: '20px' }} />
                             ))}
                         </Box>
                     )}

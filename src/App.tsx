@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/kategorie/:slug" element={<UniversalInfoPage />} />
           <Route path="/poradna" element={<Counseling />} />
           <Route path="/kontakt" element={<Contact />} />
-          <Route path="/universalInfoSubpage" element={<UniversalInfoSubpage />} />
+          <Route path="/podkategorie/:slug" element={<UniversalInfoSubpage />} />
           <Route path="/poradna/:slug" element={<CounselingDetailPage />} />
         </Routes>
       </BrowserRouter>

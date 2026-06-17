@@ -83,12 +83,15 @@ export default function CounselingDetailSection() {
                         <Skeleton variant="text" width="100%" height={32} sx={{ fontSize: '16px', lineHeight: '21px' }} />
                         <Skeleton variant="text" width="80%" height={32} sx={{ fontSize: '16px', lineHeight: '21px' }} />
                     </Grid> :
-                    article?.blocks.map((block) => (
+                    article?.blocks.map((block, index) => (
                         block.type === 'text' ?
                             <Grid key={block.heading} size={{ md: 6, sm: 10 }} offset={{ md: 2, sm: 1 }} sx={{ mt: { sm: '50px', xs: '35px' } }}>
-                                <Typography sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px' }} dangerouslySetInnerHTML={{ __html: block.text || '' }} />
+                                <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '41px', xs: '33px' }, maxWidth: '405px' }}>
+                                    {block.heading}
+                                </Typography>
+                                <Typography sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px', mt: { md: '30px', xs: '20px' } }} dangerouslySetInnerHTML={{ __html: block.text || '' }} />
                             </Grid> :
-                            <Grid size={{ md: 8, sm: 10 }} offset={{ md: 2, sm: 1 }} sx={{ mt: { sm: '40px', xs: '45px' }, columnGap: '42px', rowGap: '25px', display: 'flex', flexWrap: 'wrap', justifyContent: { md: 'flex-start', xs: 'center' } }}>
+                            <Grid size={{ md: 8, sm: 10 }} offset={{ md: 2, sm: 1 }} key={`subpagePicture-${index}`} sx={{ mt: { sm: '40px', xs: '45px' }, columnGap: '42px', rowGap: '25px', display: 'flex', flexWrap: 'wrap', justifyContent: { md: 'flex-start', xs: 'center' } }}>
                                 {block.images?.map((picture, index) => <Box component="img" src={picture} alt={`Obrázek ${index}`} key={`subpagePicture-${index}`} sx={{ width: '100%', height: 'auto', maxWidth: { md: '335px', xs: '318px' }, borderRadius: { xl: '76px', xs: '20%' }, flex: '1', minWidth: { md: '0px', xs: 'unset' }, aspectRatio: '1/1', display: 'flex' }} />)}
                             </Grid>
                     ))}

@@ -28,11 +28,6 @@ export default function UniversalInfoSection() {
     const { slug } = useParams();
     const [category, setCategory] = useState<Category | null>(null);
     const [loading, setLoading] = useState(true);
-    const loadingSkeletonBlocks = [
-        { type: "image", heading: "", text: "" },
-        { type: "text", heading: "", text: "" },
-        { type: "image", heading: "", text: "" }
-    ];
 
     useEffect(() => {
         const fetchArticles = async () => {
@@ -60,8 +55,6 @@ export default function UniversalInfoSection() {
 
         fetchArticles();
     }, []);
-
-    console.log("category", category);
 
     return (
         <Grid container spacing={2} columns={14} sx={{ mt: { md: '100px', xs: '50px' } }}>
@@ -96,7 +89,7 @@ export default function UniversalInfoSection() {
                         :
                         <Grid size={{ lg: 3, md: 4, sm: 10, xs: 12 }} offset={{ md: 1, xs: 0 }} sx={{ display: 'flex', flexDirection: 'column', gap: '10px', mt: { md: '80px', xs: '30px' } }}>
                             {category?.subcategories?.map((subcategory, index) => (
-                                <Box component="a" onClick={() => { navigate(`/podkategorie/${subcategory.slug}`); window.scrollTo(0, 0) }} key={`${subcategory.slug}-${index}`} sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', '&:hover': { filter: 'brightness(0.95)' } }}>
+                                <Box component="a" onClick={() => { navigate(`/podkategorie/${subcategory.slug}`, { state: { from: slug } }); window.scrollTo(0, 0) }} key={`${subcategory.slug}-${index}`} sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', '&:hover': { filter: 'brightness(0.95)' } }}>
                                     <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>
                                         {subcategory.name}
                                     </Typography>
