@@ -114,7 +114,7 @@ export default function UniversalInfoSubpageSection() {
                 <Grid size={{ xl: 4, md: 5, sm: 10 }} offset={{ md: 2, sm: 1 }} sx={{ mt: '120px', display: { sm: 'block', xs: 'none' } }}>
                     <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '41px', xs: '33px' }, maxWidth: '405px' }}>Využijte ePoukaz online, snadno rychle a z domova</Typography>
                     {/* Tlačítko */}
-                    <Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: { md: '30px', xs: '20px' }, '&:hover': { filter: 'brightness(0.95)' } }}>
+                    <Box component="a" href='https://app.epoukazonline.cz/c/c3fa0aef1889' target='_blank' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: { md: '30px', xs: '20px' }, '&:hover': { filter: 'brightness(0.95)' } }}>
                         <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>Zadat ePoukaz online</Typography>
                         <Box component="img" src='/arrow_black.svg' alt="Ikona šipky" />
                     </Box>

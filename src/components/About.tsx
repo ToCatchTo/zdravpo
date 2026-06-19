@@ -16,7 +16,7 @@ export default function About() {
 							Využijte ePoukaz online,<br />snadno rychle a z domova
 						</Typography>
 						{/* Tlačítko */}
-						<Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.button, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: { md: '30px', xs: '20px' }, '&:hover': { filter: 'brightness(0.95)' } }}>
+						<Box component="a" href='https://app.epoukazonline.cz/c/c3fa0aef1889' target='_blank' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.button, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: { md: '30px', xs: '20px' }, '&:hover': { filter: 'brightness(0.95)' } }}>
 							<Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text }}>
 								Zadat ePoukaz online
 							</Typography>

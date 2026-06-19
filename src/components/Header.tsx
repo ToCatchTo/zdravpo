@@ -48,7 +48,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 	}));
 
 	const mobileMenuItems = [
-		{ name: 'ePoukaz online', link: '#' },
+		{ name: 'ePoukaz online', link: 'https://app.epoukazonline.cz/c/c3fa0aef1889' },
 		...dynamicCategories.slice(0, 2),
 		{ name: 'Poradna', link: '/poradna' },
 		...dynamicCategories.slice(2),
@@ -57,7 +57,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 	];
 
 	const menuItems = [
-		{ name: 'ePoukaz online', link: '#' },
+		{ name: 'ePoukaz online', link: 'https://app.epoukazonline.cz/c/c3fa0aef1889' },
 		...dynamicCategories.slice(0, 2),
 		{ name: 'Poradna', link: '/poradna' },
 		...dynamicCategories.slice(2, 3),
@@ -96,7 +96,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 							) : (
 								<Box sx={{ width: '100%' }}>
 									{menuItems.map((item, i) => (
-										<Box component="a" onClick={() => navigate(item.link)} key={`navlink-${i}`} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItems.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
+										<Box component="a" target={item.name == 'ePoukaz online' ? '_blank' : '_self'} href={item.name == 'ePoukaz online' ? item.link : undefined} onClick={() => { navigate(item.name == 'ePoukaz online' ? '' : item.link); window.scrollTo(0, 0) }} key={`navlink-${i}`} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItems.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
 											<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: { xl: '32px', lg: '24px', md: '20px', sm: '16px' }, color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: { xl: '35px', lg: '30px', md: '22px', sm: '16px' } }} />
 											<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: { lg: '31px', sm: '25px' }, height: { lg: '31px', sm: '25px' } }}></Box>
 										</Box>
@@ -134,7 +134,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 							<Box component="img" src='/logo_white.svg' sx={{ width: '100%', height: 'auto', opacity: '0' }} alt='Logo ZDRAVPO' />
 							<Box>
 								{menuItemsExtended.map((item, i) => (
-									<Box component="a" onClick={() => navigate(item.link)} key={`navlinkExtended-${i}`} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItemsExtended.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
+									<Box component="a" onClick={() => { navigate(item.link); window.scrollTo(0, 0) }} key={`navlinkExtended-${i}`} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItemsExtended.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
 										<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: { xl: '32px', lg: '24px', md: '20px', sm: '16px' }, color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: { xl: '35px', lg: '30px', md: '22px', sm: '16px' } }} />
 										<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: { lg: '31px', sm: '25px' }, height: { lg: '31px', sm: '25px' } }}></Box>
 									</Box>
@@ -163,7 +163,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 				<Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
 					<Box component="img" src='/top_header_img_mobile.png' alt='Obrázek výdeje léků' sx={{ width: '100%', height: 'calc(100dvh - 399px)', objectFit: 'cover' }} />
 					<Box sx={{ backgroundColor: colors.primary, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px', zIndex: 2 }}>
-						<Box component="a" onClick={() => navigate('#')} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+						<Box component="a" target="_blank" href="https://app.epoukazonline.cz/c/c3fa0aef1889" sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, borderTop: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>ePoukaz online</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
@@ -206,7 +206,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 					<Box component="img" src='/logo_short.svg' sx={{ width: '200px', height: 'auto', mt: '80px' }} alt='Logo ZDRAVPO' />
 					<Box sx={{ backgroundColor: colors.primary, width: '280px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pt: '69px' }}>
 						{mobileMenuItems.map((item, i) => (
-							<Box component="a" onClick={() => { navigate(item.link); window.scrollTo(0, 0) }} key={`navlinkMobile-${i}`} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', cursor: 'pointer', borderBottom: i === mobileMenuItems.length - 1 ? 'none' : `1px solid ${colors.secondary}`, borderTop: i === 0 ? `1px solid ${colors.secondary}` : 'none', height: '65px', width: '100%', mb: i === mobileMenuItems.length - 1 ? '60px' : '0px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
+							<Box component="a" target={item.name == 'ePoukaz online' ? '_blank' : '_self'} href={item.name == 'ePoukaz online' ? item.link : undefined} onClick={() => { navigate(item.name == 'ePoukaz online' ? '' : item.link); window.scrollTo(0, 0) }} key={`navlinkMobile-${i}`} sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', cursor: 'pointer', borderBottom: i === mobileMenuItems.length - 1 ? 'none' : `1px solid ${colors.secondary}`, borderTop: i === 0 ? `1px solid ${colors.secondary}` : 'none', height: '65px', width: '100%', mb: i === mobileMenuItems.length - 1 ? '60px' : '0px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 								<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: '20px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '500', lineHeight: '25px' }} />
 							</Box>
 						))}

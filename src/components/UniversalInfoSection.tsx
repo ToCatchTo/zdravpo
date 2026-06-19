@@ -114,7 +114,7 @@ export default function UniversalInfoSection() {
                             Využijte ePoukaz online, snadno rychle a z domova
                         </Typography>
                         {/* Tlačítko */}
-                        <Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: '30px', '&:hover': { filter: 'brightness(0.95)' } }}>
+                        <Box component="a" href='https://app.epoukazonline.cz/c/c3fa0aef1889' target='_blank' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: '30px', '&:hover': { filter: 'brightness(0.95)' } }}>
                             <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>
                                 Zadat ePoukaz online
                             </Typography>
@@ -153,7 +153,7 @@ export default function UniversalInfoSection() {
                             Využijte ePoukaz online, snadno rychle a z domova
                         </Typography>
                         {/* Tlačítko */}
-                        <Box component="a" href='#' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: { md: '30px', xs: '20px' }, '&:hover': { filter: 'brightness(0.95)' } }}>
+                        <Box component="a" href='https://app.epoukazonline.cz/c/c3fa0aef1889' target='_blank' sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', maxWidth: { md: '318px', xs: '288px' }, mt: { md: '30px', xs: '20px' }, '&:hover': { filter: 'brightness(0.95)' } }}>
                             <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>
                                 Zadat ePoukaz online
                             </Typography>
