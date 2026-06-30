@@ -1,18 +1,17 @@
-import { Box, Grid, Skeleton, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../utils/globalVariables";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 type Category = {
     name: string;
     slug: string;
     photo: string;
-    blocks: CategoryBlock[];
+    blocks?: CategoryBlock[];
     subcategories?: Subcategory[];
 };
 
 type CategoryBlock = {
-    type: "text" | "image";
+    type?: "text" | "image";
     heading?: string;
     text?: string;
     images?: string[];
@@ -23,80 +22,30 @@ type Subcategory = {
     slug: string;
 }
 
-export default function UniversalInfoSection() {
+export default function UniversalInfoSection({ category }: { category: Category | null }) {
     const navigate = useNavigate();
     const { slug } = useParams();
-    const [category, setCategory] = useState<Category | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const response = await fetch(`https://admin.zdravpopardubice.cz/api/categories/${slug}`, {
-                    method: 'GET',
-                    headers: {
-                        'X-AUTH-TOKEN': 'DSgqE5I8fKqhgZrJ1n423LM6jOc6TPgN',
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Nepodařilo se načíst data (Status: ${response.status})`);
-                }
-
-                const data: Category = await response.json();
-                setCategory(data);
-            } catch (err) {
-                console.error("Chyba při API requestu:", err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchArticles();
-    }, []);
 
     return (
         <Grid container spacing={2} columns={14} sx={{ mt: { md: '100px', xs: '50px' } }}>
             <Grid columns={12} size={{ sm: 12, xs: 14 }} offset={{ sm: 1, xs: 0 }} spacing={2} container sx={{ backgroundColor: colors.button, borderRadius: { lg: '300px', md: '200px', sm: '100px', xs: '86px' }, padding: { md: '113px 0px 169px 0px', sm: '135px 36px 169px 36px', xs: '135px 36px 369px 36px' }, justifyContent: { lg: 'flex-start', xs: 'center' } }}>
                 <Grid columns={{ xl: 8, md: 10, sm: 8, xs: 12 }} size={{ xl: 8, md: 10, sm: 8, xs: 12 }} offset={{ md: 2, sm: 1, xs: 0 }} spacing={2} container sx={{ flexDirection: 'row', flexWrap: 'wrap', rowGap: { lg: '90px !important', md: '60px !important' } }}>
                     {/* Info sekce */}
-                    {loading ?
-                        <Grid size={{ md: 4, sm: 10, xs: 12 }} sx={{ flexDirection: 'column' }}>
-                            <Skeleton variant="text" sx={{ fontSize: { lg: '60px', md: '48px', xs: '32px' }, width: '60%', lineHeight: { lg: '76px', md: '58px', xs: '41px' } }} />
-                            <Skeleton variant="text" sx={{ fontSize: '16px', width: '100%', lineHeight: '21px', mt: { md: '45px', xs: '30px' } }} />
-                            <Skeleton variant="text" sx={{ fontSize: '16px', width: '100%', lineHeight: '21px' }} />
-                            <Skeleton variant="text" sx={{ fontSize: '16px', width: '100%', lineHeight: '21px' }} />
-                            <Skeleton variant="text" sx={{ fontSize: '16px', width: '100%', lineHeight: '21px' }} />
-                            <Skeleton variant="text" sx={{ fontSize: '16px', width: '60%', lineHeight: '21px' }} />
-                            <Typography dangerouslySetInnerHTML={{ __html: category?.name || '' }} component="h1" sx={{ color: colors.primary, fontSize: { lg: '60px', md: '48px', xs: '32px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '76px', md: '58px', xs: '41px' }, textAlign: { md: 'left', xs: 'center' } }} />
-                            <Typography dangerouslySetInnerHTML={{ __html: category?.blocks[0].text || '' }} sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px', mt: { md: '45px', xs: '30px' } }} />
-                        </Grid>
-                        :
-                        <Grid size={{ md: 4, sm: 10, xs: 12 }} sx={{ flexDirection: 'column' }}>
-                            <Typography dangerouslySetInnerHTML={{ __html: category?.name || '' }} component="h1" sx={{ color: colors.primary, fontSize: { lg: '60px', md: '48px', xs: '32px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '76px', md: '58px', xs: '41px' }, textAlign: { md: 'left', xs: 'center' } }} />
-                            <Typography dangerouslySetInnerHTML={{ __html: category?.blocks[0].text || '' }} sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px', mt: { md: '45px', xs: '30px' } }} />
-                        </Grid>}
+                    <Grid size={{ md: 4, sm: 10, xs: 12 }} sx={{ flexDirection: 'column' }}>
+                        <Typography dangerouslySetInnerHTML={{ __html: category?.name || '' }} component="h1" sx={{ color: colors.primary, fontSize: { lg: '60px', md: '48px', xs: '32px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '76px', md: '58px', xs: '41px' }, textAlign: { md: 'left', xs: 'center' } }} />
+                        <Typography dangerouslySetInnerHTML={{ __html: category?.blocks?.[0]?.text || '' }} sx={{ color: colors.text, fontSize: '16px', fontFamily: 'Onest', fontWeight: '400', lineHeight: '21px', mt: { md: '45px', xs: '30px' } }} />
+                    </Grid>
                     {/* Seznam podstránek */}
-                    {loading ?
-                        <Grid size={{ lg: 3, md: 4, sm: 10, xs: 12 }} offset={{ md: 1, xs: 0 }} sx={{ display: 'flex', flexDirection: 'column', gap: '10px', mt: { md: '80px', xs: '30px' } }}>
-                            <Skeleton variant="rectangular" sx={{ width: '100%', height: '60px', borderRadius: '20px' }} />
-                            <Skeleton variant="rectangular" sx={{ width: '100%', height: '60px', borderRadius: '20px' }} />
-                            <Skeleton variant="rectangular" sx={{ width: '100%', height: '60px', borderRadius: '20px' }} />
-                            <Skeleton variant="rectangular" sx={{ width: '100%', height: '60px', borderRadius: '20px' }} />
-                            <Skeleton variant="rectangular" sx={{ width: '100%', height: '60px', borderRadius: '20px' }} />
-                        </Grid>
-                        :
-                        <Grid size={{ lg: 3, md: 4, sm: 10, xs: 12 }} offset={{ md: 1, xs: 0 }} sx={{ display: 'flex', flexDirection: 'column', gap: '10px', mt: { md: '80px', xs: '30px' } }}>
-                            {category?.subcategories?.map((subcategory, index) => (
-                                <Box component="a" onClick={() => { navigate(`/podkategorie/${subcategory.slug}`, { state: { from: slug } }); window.scrollTo(0, 0) }} key={`${subcategory.slug}-${index}`} sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', '&:hover': { filter: 'brightness(0.95)' } }}>
-                                    <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>
-                                        {subcategory.name}
-                                    </Typography>
-                                    <Box component="img" src='/arrow_black.svg' alt="Ikona šipky" />
-                                </Box>
-                            ))}
-                        </Grid>}
+                    <Grid size={{ lg: 3, md: 4, sm: 10, xs: 12 }} offset={{ md: 1, xs: 0 }} sx={{ display: category?.subcategories?.length === 0 ? 'none' : 'flex', flexDirection: 'column', gap: '10px', mt: { md: '80px', xs: '30px' } }}>
+                        {category?.subcategories?.map((subcategory, index) => (
+                            <Box component="a" onClick={() => { navigate(`/podkategorie/${subcategory.slug}`, { state: { from: slug } }); window.scrollTo(0, 0) }} key={`${subcategory.slug}-${index}`} sx={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', cursor: 'pointer', backgroundColor: colors.secondary, borderRadius: '20px', padding: '15px', alignItems: 'center', '&:hover': { filter: 'brightness(0.95)' } }}>
+                                <Typography sx={{ fontSize: '18px', fontFamily: 'Onest', fontWeight: '700', color: colors.text, mr: '10px' }}>
+                                    {subcategory.name}
+                                </Typography>
+                                <Box component="img" src='/arrow_black.svg' alt="Ikona šipky" />
+                            </Box>
+                        ))}
+                    </Grid>
                     {/* Bloky obsahu */}
                     {category?.blocks?.slice(1).map((block, index) => (
                         block.type === 'text' ?
@@ -109,7 +58,7 @@ export default function UniversalInfoSection() {
                             </Grid>
                     ))}
                     {/* Služba ePoukaz online - desktop viditelná */}
-                    <Grid size={{ md: category?.blocks?.[category?.blocks?.length - 1].type == 'text' ? 3 : 4, sm: 10, xs: 12 }} offset={{ md: ((category?.blocks?.length ?? 0) % 2) == 0 ? 1 : 0, sm: 0, xs: 0 }} sx={{ display: { md: 'flex', xs: 'none' }, flexDirection: 'column' }}>
+                    <Grid size={{ md: category?.blocks?.[category?.blocks?.length - 1]?.type == 'text' ? 3 : 4, sm: 10, xs: 12 }} offset={{ md: (((category?.blocks?.length ?? 0) + ((category?.subcategories?.length ?? 0) > 0 ? 0 : 1)) % 2 === 0) ? 1 : 0, sm: 0, xs: 0 }} sx={{ display: { md: 'flex', xs: 'none' }, flexDirection: 'column' }}>
                         <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '600', lineHeight: { lg: '41px', xs: '33px' }, maxWidth: '405px' }}>
                             Využijte ePoukaz online, snadno rychle a z domova
                         </Typography>
@@ -125,7 +74,7 @@ export default function UniversalInfoSection() {
                         </Typography>
                     </Grid>
                     {/* Adresa */}
-                    <Grid size={{ lg: 3, md: 3, sm: 10, xs: 12 }} offset={{ sm: ((category?.blocks?.length ?? 0) % 2) == 0 ? 0 : 1, xs: 0 }} sx={{ mt: { md: '0px', xs: '76px' } }}>
+                    <Grid size={{ lg: 3, md: 3, sm: 10, xs: 12 }} offset={{ sm: (((category?.blocks?.length ?? 0) + ((category?.subcategories?.length ?? 0) > 0 ? 0 : 1)) % 2 === 0) ? 0 : 1, xs: 0 }} sx={{ mt: { md: '0px', xs: '76px' } }}>
                         <Box>
                             <Typography component="h2" sx={{ color: colors.primary, fontSize: { lg: '32px', xs: '26px' }, fontFamily: 'Onest', fontWeight: '700', lineHeight: { lg: '41px', xs: '33px' } }}>
                                 Navštivte nás

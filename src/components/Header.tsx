@@ -1,6 +1,6 @@
-import { Box, Grid, Skeleton, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { colors } from './../utils/globalVariables';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 type Category = {
@@ -9,38 +9,9 @@ type Category = {
 	position: number;
 };
 
-export default function Header({ isHidden }: { isHidden: boolean }) {
+export default function Header({ isHidden, categories }: { isHidden: boolean; categories: Category[] }) {
 	const [isOpened, setIsOpened] = useState(false);
 	const navigate = useNavigate();
-	const [categories, setCategories] = useState<Category[]>([]);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		const fetchCategories = async () => {
-			try {
-				const response = await fetch('https://admin.zdravpopardubice.cz/api/categories', {
-					method: 'GET',
-					headers: {
-						'X-AUTH-TOKEN': 'DSgqE5I8fKqhgZrJ1n423LM6jOc6TPgN',
-						'Content-Type': 'application/json'
-					}
-				});
-
-				if (!response.ok) {
-					throw new Error(`Nepodařilo se načíst data (Status: ${response.status})`);
-				}
-
-				const data = await response.json();
-				setCategories(data);
-			} catch (err) {
-				console.error("Chyba při API requestu:", err);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchCategories();
-	}, []);
 
 	const dynamicCategories = categories.map(category => ({
 		name: category.name,
@@ -84,25 +55,14 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 							{/* Logo */}
 							<Box component="img" src='/logo_white.svg' sx={{ width: '100%', height: 'auto' }} alt='Logo ZDRAVPO' />
 							{/* Základní navigace */}
-							{loading ? (
-								<Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-									<Skeleton variant="rectangular" sx={{ width: '100%', height: { lg: '70px', md: '60px', sm: '40px' }, borderRadius: '20px' }} />
-									<Skeleton variant="rectangular" sx={{ width: '100%', height: { lg: '70px', md: '60px', sm: '40px' }, borderRadius: '20px' }} />
-									<Skeleton variant="rectangular" sx={{ width: '100%', height: { lg: '70px', md: '60px', sm: '40px' }, borderRadius: '20px' }} />
-									<Skeleton variant="rectangular" sx={{ width: '100%', height: { lg: '70px', md: '60px', sm: '40px' }, borderRadius: '20px' }} />
-									<Skeleton variant="rectangular" sx={{ width: '100%', height: { lg: '70px', md: '60px', sm: '40px' }, borderRadius: '20px' }} />
-									<Skeleton variant="rectangular" sx={{ width: '100%', height: { lg: '70px', md: '60px', sm: '40px' }, borderRadius: '20px' }} />
-								</Box>
-							) : (
-								<Box sx={{ width: '100%' }}>
-									{menuItems.map((item, i) => (
-										<Box component="a" target={item.name == 'ePoukaz online' ? '_blank' : '_self'} href={item.name == 'ePoukaz online' ? item.link : undefined} onClick={() => { navigate(item.name == 'ePoukaz online' ? '' : item.link); window.scrollTo(0, 0) }} key={`navlink-${i}`} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItems.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
-											<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: { xl: '32px', lg: '24px', md: '20px', sm: '16px' }, color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: { xl: '35px', lg: '30px', md: '22px', sm: '16px' } }} />
-											<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: { lg: '31px', sm: '25px' }, height: { lg: '31px', sm: '25px' } }}></Box>
-										</Box>
-									))}
-								</Box>
-							)}
+							<Box sx={{ width: '100%' }}>
+								{menuItems.map((item, i) => (
+									<Box component="a" target={item.name == 'ePoukaz online' ? '_blank' : '_self'} href={item.name == 'ePoukaz online' ? item.link : undefined} onClick={() => { navigate(item.name == 'ePoukaz online' ? '' : item.link); window.scrollTo(0, 0) }} key={`navlink-${i}`} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: i === menuItems.length - 1 ? 'none' : `2px solid ${colors.secondary}`, pr: { md: '15px', sm: '5px' }, height: { lg: '70px', md: '60px', sm: '40px' }, '&:hover': { textDecoration: 'underline' }, color: colors.secondary, '@media (min-width: 1536px)': { height: '80px' }, '@media (min-width: 1700px)': { height: '90px' } }}>
+										<Typography dangerouslySetInnerHTML={{ __html: item.name }} sx={{ fontSize: { xl: '32px', lg: '24px', md: '20px', sm: '16px' }, color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: { xl: '35px', lg: '30px', md: '22px', sm: '16px' } }} />
+										<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: { lg: '31px', sm: '25px' }, height: { lg: '31px', sm: '25px' } }}></Box>
+									</Box>
+								))}
+							</Box>
 						</Box>
 					</Grid>
 				</Grid>
@@ -167,12 +127,7 @@ export default function Header({ isHidden }: { isHidden: boolean }) {
 							<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>ePoukaz online</Typography>
 							<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
 						</Box>
-						{loading &&
-							<Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', mt: '20px' }}>
-								<Skeleton variant="rectangular" sx={{ width: '280px', height: '72px', borderRadius: '20px' }} />
-								<Skeleton variant="rectangular" sx={{ width: '280px', height: '72px', borderRadius: '20px' }} />
-							</Box>}
-						{!loading && dynamicCategories.slice(0, 2).map((item, i) => (
+						{dynamicCategories.slice(0, 2).map((item, i) => (
 							<Box component="a" key={i} onClick={() => { navigate(item.link); window.scrollTo(0, 0) }} sx={{ gap: '50px', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderBottom: '2px solid ' + colors.secondary, pr: '15px', height: '90px', width: '280px', '&:hover': { textDecoration: 'underline' }, color: colors.secondary }}>
 								<Typography sx={{ fontSize: '32px', color: colors.secondary, fontFamily: 'Onest', fontWeight: '600', lineHeight: '35px' }}>{item.name}</Typography>
 								<Box component="img" src='/arrow.svg' alt='Ikona Šipky' sx={{ width: '31px', height: '31px' }}></Box>
